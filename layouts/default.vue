@@ -1,5 +1,4 @@
 <!-- layouts/default.vue -->
-
 <template>
   <div class="font-main flex flex-wrap justify-around">
     <header class="w-64 h-64">
@@ -47,6 +46,7 @@
             </button>
           </a>
         </div>
+        <input type="text" placeholder="Keywords" class="bg-gray-300 p-2 text-xs rounded w-full mt-5 focus:outline-none" v-model="keyword" @keypress.enter="$router.push('/search/' + keyword)">
       </div>
     </header>
     <main class="w-full mt-10">
@@ -60,6 +60,11 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
 export default {
+  data() {
+    return {
+      keyword: ''
+    }
+  },
   computed: {
     faTwitter() {
       return faTwitter;
@@ -81,7 +86,7 @@ main {
 .photo {
   min-width: 4rem;
   min-height: 4rem;
-  /* background-image: url("アイコン画像URL"); */
+  background-image: url("assets/my-profile.JPG");
 }
 button:focus {
   outline: none;

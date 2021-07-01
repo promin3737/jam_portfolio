@@ -1,6 +1,11 @@
 const config = require("./.contentful.json");
 const contentful = require("contentful");
 
+const client = contentful.createClient({
+  space: config.CTF_SPACE_ID,
+  accessToken: config.CTF_CDA_ACCESS_TOKEN
+}) 
+
 export default {
   env: {
     CTF_SPACE_ID: config.CTF_SPACE_ID,
@@ -54,6 +59,27 @@ export default {
     component: "fa"
   },
 
+  generate: {
+    routes () {
+      return Promise.all([
+        client.getEntries({
+          'content_type': 'work'
+        }),
+        client.getEntries({
+          'content_type': 'category'
+        }),
+        client.getEntries({
+          'content_type': 'tag'
+        })
+      ]).then(([works,categories,tags]) => {
+        return [
+          ...works.items.map(work => `work/${work.fields.slug}`),
+          ...categories.items.map(category => `category/${category.fields.slug}`),
+          ...tags.items.map(tag => `tag/${tag.sys.id}`)
+        ]
+      })
+    }
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {}
 };
