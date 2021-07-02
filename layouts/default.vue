@@ -17,15 +17,15 @@
           </div>
         </div>
         <div class="flex justify-around mt-5 text-xs">
-          <nuxt-link to="/">
+          <nuxt-link to="https://www.instagram.com/hayabusa_3737/">
             <button>
               <fa-layers full-width class="fa-2x block mx-auto mb-1">
                 <fa :icon="faCode" />
               </fa-layers>
-              Works
+              Instagram
             </button>
           </nuxt-link>
-          <a href="http://" target="_blank" rel="noopener noreferrer">
+          <a href="https://twitter.com/hayabusa_3737" target="_blank" rel="noopener noreferrer">
             <button>
               <fa-layers full-width class="fa-2x block mx-auto mb-1">
                 <fa :icon="faTwitter" />
@@ -34,7 +34,7 @@
             </button>
           </a>
           <a
-            href="https://github.com/si-zerodarkthirty"
+            href="https://github.com/promin3737"
             target="_blank"
             rel="noopener noreferrer"
           >
