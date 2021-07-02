@@ -17,14 +17,14 @@
           </div>
         </div>
         <div class="flex justify-around mt-5 text-xs">
-          <nuxt-link to="https://www.instagram.com/hayabusa_3737/">
+          <!-- <nuxt-link to="https://www.instagram.com/hayabusa_3737/">
             <button>
               <fa-layers full-width class="fa-2x block mx-auto mb-1">
                 <fa :icon="faCode" />
               </fa-layers>
               Instagram
             </button>
-          </nuxt-link>
+          </nuxt-link> -->
           <a href="https://twitter.com/hayabusa_3737" target="_blank" rel="noopener noreferrer">
             <button>
               <fa-layers full-width class="fa-2x block mx-auto mb-1">
