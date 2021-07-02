@@ -38,6 +38,9 @@
 </template>
 
 <script>
+import { faLink } from '@fortawesome/free-solid-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+
 import { createClient } from '~/plugins/contentful.js'
 const client = createClient()
 export default { 
@@ -52,6 +55,14 @@ export default {
         work: works.items[0] // 取得した配列データの初めの１つを変数workに入れる
       }
     }).catch(console.error)
+  },
+  computed: {
+    faLink () {
+      return faLink
+    },
+    faGithub () {
+      return faGithub
+    }
   }
 }
 </script>
